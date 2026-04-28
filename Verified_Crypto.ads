@@ -1,6 +1,6 @@
 with Interfaces; use Interfaces;
 
-package body Worm_Crypto with SPARK_Mode is
+package body Verified_Crypto with SPARK_Mode is
 
    -- FIXED: Standardized all hexadecimal notation to 16#
    S_Box : constant array (Unsigned_8) of Unsigned_8 := 
@@ -46,4 +46,4 @@ package body Worm_Crypto with SPARK_Mode is
       end loop;
    end Encrypt_Block;
 
-end Worm_Crypto;
+end Verified_Crypto;
