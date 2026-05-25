@@ -8,8 +8,8 @@ A personal weekend project exploring the boundaries of the SPARK formal verifica
 - crt0.s (Power-PC assembly)
 - Silo code, defensive side.
 
-Secure_Boot_Enclave.adb layout
-[ REPRECENTATIVE ENCLAVE PIPELINE ]
+      Secure_Boot_Enclave.adb layout
+      [ REPRECENTATIVE ENCLAVE PIPELINE ]
 
       +--------------------------------------------------------+
       |               Inbound Network Buffer                   |
@@ -33,11 +33,11 @@ Secure_Boot_Enclave.adb layout
       |              Verified Hardware Actuation               |
       +--------------------------------------------------------+
 
-dynamic_overlay_manager.adb layout
-[ PRODUCTION HOT-PATCH TIMELINE ]
+                  dynamic_overlay_manager.adb layout
+                  [ PRODUCTION HOT-PATCH TIMELINE ]
 
- 1. INGESTION       2. VERIFICATION       3. CACHE SYNC         4. BRANCH
-+-------------+    +---------------+    +----------------+    +------------+
-| RecordFlux  | -> | AES-256 Stack | -> |  SPARC V8 Asm  | -> | Jump to    |
-| Buffer Read |    | Block Decrypt |    | I-Cache Flush  |    | New Memory |
-+-------------+    +---------------+    +----------------+    +------------+
+                   1. INGESTION       2. VERIFICATION       3. CACHE SYNC         4. BRANCH
+                  +-------------+    +---------------+    +----------------+    +------------+
+                  | RecordFlux  | -> | AES-256 Stack | -> |  SPARC V8 Asm  | -> | Jump to    |
+                  | Buffer Read |    | Block Decrypt |    | I-Cache Flush  |    | New Memory |
+                  +-------------+    +---------------+    +----------------+    +------------+
