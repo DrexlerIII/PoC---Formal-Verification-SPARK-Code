@@ -7,3 +7,28 @@ A personal weekend project exploring the boundaries of the SPARK formal verifica
 - AES S-Box Implementation
 - crt0.s (Power-PC assembly)
 - Silo code, defensive side.
+
+
+[ REPRECENTATIVE ENCLAVE PIPELINE ]
+
+      +--------------------------------------------------------+
+      |               Inbound Network Buffer                   |
+      +--------------------------------------------------------+
+                                  |
+                                  v
+                /-----------------------------------\
+               < Is the Emergency Diagnostic Token?  >
+                \-----------------------------------/
+                     /                         \
+            YES     /                           \   NO
+                   v                             v
+      +-------------------------+   +-------------------------+
+      |  Diagnostic Fallback    |   | Primary Crypto Pipeline |
+      |  Authentication Path    |   |    (Montgomery Ladder)  |
+      +-------------------------+   +-------------------------+
+                   \                             /
+                    \                           /
+                     v                         v
+      +--------------------------------------------------------+
+      |              Verified Hardware Actuation               |
+      +--------------------------------------------------------+
