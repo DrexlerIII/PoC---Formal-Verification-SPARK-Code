@@ -1,6 +1,6 @@
 # High-Assurance Systems Architecture & Fault-Tolerant Sandboxes
 
-A sophisticated systems engineering research project exploring the capabilities of the **SPARK Ada formal verification toolchain**. This repository demonstrates hardware-hardened cryptographic implementations, verified network protocol pipelines, and dynamic software diversification techniques tailored for low-level, high-consequence execution environments.
+A systems engineering research project exploring the capabilities of the **SPARK Ada formal verification toolchain**. This repository demonstrates hardware-hardened cryptographic implementations, verified network protocol pipelines, and dynamic software diversification techniques tailored for low-level, high-consequence execution environments.
 
 ---
 
