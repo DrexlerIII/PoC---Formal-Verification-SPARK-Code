@@ -41,3 +41,23 @@ A personal weekend project exploring the boundaries of the SPARK formal verifica
                   | RecordFlux  | -> | AES-256 Stack | -> |  SPARC V8 Asm  | -> | Jump to    |
                   | Buffer Read |    | Block Decrypt |    | I-Cache Flush  |    | New Memory |
                   +-------------+    +---------------+    +----------------+    +------------+
+  
+        software_diversification_manager.adb & software_diversification_manager.ads layout 
+        [ THE DIVERSIFICATION PROCESS ]
+
+      +-------------------------------------------------------+
+      |               Static Base Firmware Image              |
+      +-------------------------------------------------------+
+                                  |
+                                  v
+              +---------------------------------------+
+              |      Software Diversification Module  |
+              |       (Dynamic Memory Bank Rotation)  |
+              +---------------------------------------+
+                /                 |                 \
+               /                  |                  \
+              v                   v                   v
+      +---------------+   +---------------+   +---------------+
+      |   Variant A   |   |   Variant B   |   |   Variant C   |
+      | Memory Layout |   | Memory Layout |   | Memory Layout |
+      +---------------+   +---------------+   +---------------+
