@@ -12,6 +12,20 @@ A sophisticated systems engineering research project exploring the capabilities 
 * **Bare-Metal Control Initialization (`boot_overlay_init.S`):** Low-level hardware synchronization routines that manage processor trap structures, invalidate and flush instructions caches (`I-Cache`), and perform secure context switching.
     * *Target Architectures:* LEON3 SPARC V8 and PowerPC (`crt0.s`).
 
+ ## Compilation & Verification Toolchain (Conceptual Overview)
+
+The architecture is designed to be cross-compiled for bare-metal targets using the GNAT LLVM or GCC native target suites, managed via custom build automation profiles.
+
+### Formal Verification Pipeline
+Static analysis is handled via the SPARK `gnatprove` toolchain. The verification boundary is enforced using strict data-flow and information-flow analysis switches:
+* **Proof Level:** 4 (Extensive proof checking, utilizing Alt-Ergo, Z3, and CVC4 solvers).
+* **Target Properties:** Absence of runtime errors (AoRTE), exception freedom, and structural contract compliance.
+
+### Compiler Configuration Highlights
+When targeting embedded architectures like the LEON3 SPARC V8, specific low-level compilation constraints must be observed:
+* **Optimization Control:** Cryptographic modules are compiled under strict optimization constraints to guarantee that the compiler does not alter or eliminate constant-time evaluation branches (preventing dead-code elimination from ruining side-channel protections).
+* **Linker Mapping:** Memory alignment constraints are mapped via an external linker script, partitioning the hardware into isolated secure enclaves and rotation execution banks.
+
 ---
 
 ## 📊 Architectural Flow Diagrams
@@ -19,7 +33,7 @@ A sophisticated systems engineering research project exploring the capabilities 
 ### 1. Secure Boot Enclave Pipeline
 The cross-domain validation gateway enforces a dual-path design. If a high-priority hardware emergency token is matched, execution is routed immediately to a dedicated diagnostic fallback path, maximizing system availability during network or credential failure.
 
-```text
+```
 +--------------------------------------------------------+
 |               Inbound Network Buffer                   |
 +--------------------------------------------------------+
