@@ -1,9 +1,9 @@
-!------------------------------------------------------------------------------
-! MODULE: BOOT_OVERLAY_INIT.S
-! TARGET: LEON3 SPARC-V8 (Low-Level Hardware Actuation Layer)
-! DESCRIPTION: Manages register synchronization, critical relay engagement,
-!              and system cache state transitions during hot-patching.
-!------------------------------------------------------------------------------
+/* !------------------------------------------------------------------------------
+/* ! MODULE: BOOT_OVERLAY_INIT.S
+/* ! TARGET: LEON3 SPARC-V8 (Low-Level Hardware Actuation Layer)
+/* ! DESCRIPTION: Manages register synchronization, critical relay engagement,
+/* !              and system cache state transitions during hot-patching.
+/* !------------------------------------------------------------------------------
 
 .section ".text.boot_overlay", "ax"
 .global _init_firmware_switch
