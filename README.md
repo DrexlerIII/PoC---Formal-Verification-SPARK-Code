@@ -11,7 +11,7 @@ A systems engineering research project exploring the capabilities of the **SPARK
 * **Dynamic Software Diversification Module (`software_diversification_manager`):** An active exploitation mitigation engine that dynamically rotates application code execution across redundant, isolated hardware memory banks aligned directly to `memory.ld` linker scripts.
 * **Bare-Metal Control Initialization (`boot_overlay_init.S`):** Low-level hardware synchronization routines that manage processor trap structures, invalidate and flush instructions caches (`I-Cache`), and perform secure context switching.
     * *Target Architectures:* LEON3 SPARC V8 (`boot_overlay_init.s`).
-    * *Target Architectures:* RAD750 - PowerPC ('crt0.s'). 
+    * *Target Architectures:* RAD750 - PowerPC (`crt0.s`).
 
  ## Compilation & Verification Toolchain (Conceptual Overview)
 
